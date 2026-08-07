@@ -160,6 +160,7 @@
     }
     openUrlFallback(url);
   }
+  window.openUrl = openUrl;
   // 資料棚・成果物などの素の <a href="http..."> クリックを横取りして、本体経由でPCのブラウザで開く。
   // （プレビューペインの "Preview only supports localhost URLs" ブロック対策）
   document.addEventListener("click", function (ev) {

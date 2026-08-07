@@ -125,7 +125,7 @@
           '</div>' +
           // 右カラム：今日の予定（入り切らない予定はトグルで開く）
           '<div class="of-board of-calboard" data-calboard>' +
-            '<div class="of-cal-head"><b>📅 今日の予定</b><span class="of-cal-note" data-cal-note></span></div>' +
+            '<div class="of-cal-head" data-act="opencal" title="クリックでGoogleカレンダーを開く" style="cursor:pointer"><b>📅 今日の予定</b><span class="of-cal-note" data-cal-note></span></div>' +
             '<div class="of-cal-list" data-cal-list><div class="of-cal-empty">読み込み中…</div></div>' +
             '<button class="of-cal-toggle" data-cal-toggle hidden>▼ もっと見る</button>' +
           '</div>' +
@@ -294,6 +294,7 @@
     if (el.closest && el.closest(".of-qm-btn")) { var qmc = q("[data-quickmenu]"); if (qmc) qmc.classList.remove("open"); }
     switch (p[0]) {
       case "activity": if (window.openActivity) window.openActivity(); break;
+      case "opencal": if (window.openUrl) window.openUrl("https://calendar.google.com/calendar/r"); break;
       case "app": if (window.openApp) window.openApp(p[1]); break;
       case "integrations": if (window.openIntegrations) window.openIntegrations(); break;
       case "business": if (window.openBusiness) window.openBusiness(); break;
